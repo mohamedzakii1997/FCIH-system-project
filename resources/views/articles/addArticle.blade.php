@@ -1,0 +1,10 @@
+@extends('layouts.articleForm')
+@section('action')
+	action="{{url('/articles/add')}}"
+@endsection
+@section('headerValue')
+	value="{{old('header')}}"
+@endsection
+@section('descriptionValue')
+{{old('description')}}
+@endsection

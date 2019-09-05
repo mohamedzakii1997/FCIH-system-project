@@ -1,0 +1,26 @@
+@extends('layouts.departmentForm')
+@section('action')
+    action="{{url('/admin/updateDepartment/'.$department->id)}}"
+@endsection
+@section('namevalue')
+	@if(old('name'))
+		value="{{old('name')}}"
+	@else
+    	value="{{$department->name}}"
+    @endif
+@endsection
+@section('symbolvalue')
+	@if(old('symbol'))
+		value="{{old('symbol')}}"
+	@else
+    	value="{{$department->symbol}}"
+    @endif
+@endsection
+@section('optional')
+	@if(old('optional'))
+		value="{{old('optional')}}"
+	@else
+	value="{{$department->optional}}"
+	@endif
+@endsection
+

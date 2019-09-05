@@ -1,0 +1,57 @@
+@extends('layouts.studentsform')
+@section('action')
+action="{{url('admin/students/update/'.$student->id)}}"
+@endsection
+@section('e_namevalue')
+	@if(old('englishName'))
+		value="{{old('englishName')}}"
+	@else
+		value="{{$student->englishName}}"
+	@endif
+@endsection
+@section('a_namevalue')
+@if(old('arabicName'))
+		value="{{old('arabicName')}}"
+	@else
+		value="{{$student->arabicName}}"
+	@endif
+@endsection
+@section('usernamevalue')
+@if(old('username'))
+		value="{{old('username')}}"
+	@else
+		value="{{$student->username}}"
+	@endif
+@endsection
+@section('emailvalue')
+@if(old('email'))
+		value="{{old('email')}}"
+	@else
+		value="{{$student->email}}"
+	@endif
+@endsection
+@section('ssnvalue')
+@if(old('SSN'))
+		value="{{old('SSN')}}"
+	@else
+		value="{{$student->SSN}}"
+	@endif
+@endsection
+
+@if(old('gender')=="Male")
+	@section('malevalue')
+		checked
+	@endsection
+@elseif(old('gender')=='Female')
+	@section('femalevalue')
+		checked
+	@endsection
+@elseif($student->gender=='Male')
+	@section('malevalue')
+		checked
+	@endsection
+@else
+	@section('femalevalue')
+		checked
+	@endsection
+@endif
